@@ -11,12 +11,26 @@
     <!-- <link href="style.css"> -->
     </head>
     <body>
-        <div id = "TextArea" style="height:50%; width:100%">
-        </div>
+        <textarea id = "TextArea" style="height:50%; width:100%">
+        </textarea>
         
             <button type="button" id="Btn" style="height:50%; width:100%">
                 
             </button>
+
+        <script>
+            function output(text) {
+                document.getElementById("TextArea").append(text + "\n\n");
+            }
+            var Module = {
+                'print':function (text) {
+                    output ("print\n" + text);
+                },
+                'printerr': function (text) {
+                    output ("printerr\n" + text);
+                },
+            };
+        </script>
         
         <script src="multiply.js"></script>
     </body>
