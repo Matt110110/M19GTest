@@ -14,10 +14,21 @@
         <div id = "TextArea" style="height:50%; width:100%">
         </div>
         
-            <button type="button" id="Btn" style="height:50%; width:100%">
-                
-            </button>
-        
+        <button type="button" id="Btn" style="height:50%; width:100%">              
+        </button>
+        <script>
+            function output(text) {
+                document.getElementById("output_area").append(text + "\n\n");
+            }
+            var Module = {
+                'print': function (text) {
+                    output("print\n" + text);
+                },
+                'printErr': function (text) {
+                    output("printErr\n" + text);
+                },
+            };
+        </script>
         <script src="multiply.js"></script>
     </body>
 </html>
