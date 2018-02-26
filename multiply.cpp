@@ -1,10 +1,9 @@
 #include <iostream>
-using namespace std;
 
-
-
-int main()
+extern "C"
 {
-cout << "\nInitialized.\n";
-return 0;
+    int multiply(float x, float y)
+    {
+        return (int) x*y;
+    }
 }
