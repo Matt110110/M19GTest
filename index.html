@@ -12,6 +12,7 @@
 
   <button type="button" id="Btn" style="height:50%; width:100%"></button>
   <script async type="text/javascript" src="multiply.js"></script>
+  <script async type="text/javascript" src="multiply_in.js"></script>
   <script>
     var x, y;
     var text;
@@ -28,6 +29,11 @@
       document.getElementById("TextArea").append(text + "\n\n");
     }
     var Module = {
+        onRuntimeInitialized : function() {
+            x = Math.random() * 100;
+            y = Math.random() * 731;
+            output(Module.ccall('multiply','number',['number','number'],[x,y]));
+        },
       'print': function (text) {
         output("print\n" + text);
       },
@@ -35,6 +41,10 @@
         output("printerr\n" + text);
       },
     };
+  </script>
+  <script>
+    document.getElementsByTagName('button')[0].click();
+  
   </script>
 </body>
 </html>
