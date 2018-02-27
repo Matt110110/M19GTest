@@ -21,7 +21,7 @@
         x = e.pageX - elm.offset().left;
         y = e.pageY - elm.offset().top;
         text = Module.ccall('multiply','number',['number','number'],[x,y]);
-        console.log(text);
+        output(text);
       });
     });
     function output(text) {
