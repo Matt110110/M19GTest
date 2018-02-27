@@ -1634,9 +1634,10 @@ function copyTempDouble(ptr) {
 
    
 
-  function _multiply_in_js() {
-  Module['printErr']('missing function: multiply_in_js'); abort(-1);
-  }
+  function _multiply_in_js( a, b) {
+          output("multiplying in js : " + x + " * " + y);
+          return a * b;
+      }
 
   
   function ___setErrNo(value) {
