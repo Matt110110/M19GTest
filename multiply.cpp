@@ -2,11 +2,10 @@
 
 extern "C"
 {
-    extern int multiply_in_js(float a, float b); // Implemented in js but now what?
-
+    extern int multiply_in_js(float a, float b); 
     int multiply(float x, float y)
     {
-        return multiply_in_js(x, y); // Fault point
+        return multiply_in_js(x, y); 
     }
 
     int main()
