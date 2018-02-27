@@ -2,4 +2,4 @@
 Coding Test for the M19G internship
 
 ### Personal note :
-Step 5 is fixed, at least in my method. 
+Step 5 is done, at least in my method. 
