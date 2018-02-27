@@ -1634,6 +1634,10 @@ function copyTempDouble(ptr) {
 
    
 
+  function _multiply_in_js() {
+  Module['printErr']('missing function: multiply_in_js'); abort(-1);
+  }
+
   
   function ___setErrNo(value) {
       if (Module['___errno_location']) HEAP32[((Module['___errno_location']())>>2)]=value;
@@ -1783,7 +1787,7 @@ function invoke_iiii(index,a1,a2,a3) {
 
 Module.asmGlobalArg = { "Math": Math, "Int8Array": Int8Array, "Int16Array": Int16Array, "Int32Array": Int32Array, "Uint8Array": Uint8Array, "Uint16Array": Uint16Array, "Uint32Array": Uint32Array, "Float32Array": Float32Array, "Float64Array": Float64Array, "NaN": NaN, "Infinity": Infinity };
 
-Module.asmLibraryArg = { "abort": abort, "assert": assert, "enlargeMemory": enlargeMemory, "getTotalMemory": getTotalMemory, "abortOnCannotGrowMemory": abortOnCannotGrowMemory, "abortStackOverflow": abortStackOverflow, "nullFunc_ii": nullFunc_ii, "nullFunc_iiii": nullFunc_iiii, "invoke_ii": invoke_ii, "invoke_iiii": invoke_iiii, "___lock": ___lock, "___setErrNo": ___setErrNo, "___syscall140": ___syscall140, "___syscall146": ___syscall146, "___syscall54": ___syscall54, "___syscall6": ___syscall6, "___unlock": ___unlock, "_emscripten_memcpy_big": _emscripten_memcpy_big, "flush_NO_FILESYSTEM": flush_NO_FILESYSTEM, "DYNAMICTOP_PTR": DYNAMICTOP_PTR, "tempDoublePtr": tempDoublePtr, "ABORT": ABORT, "STACKTOP": STACKTOP, "STACK_MAX": STACK_MAX };
+Module.asmLibraryArg = { "abort": abort, "assert": assert, "enlargeMemory": enlargeMemory, "getTotalMemory": getTotalMemory, "abortOnCannotGrowMemory": abortOnCannotGrowMemory, "abortStackOverflow": abortStackOverflow, "nullFunc_ii": nullFunc_ii, "nullFunc_iiii": nullFunc_iiii, "invoke_ii": invoke_ii, "invoke_iiii": invoke_iiii, "___lock": ___lock, "___setErrNo": ___setErrNo, "___syscall140": ___syscall140, "___syscall146": ___syscall146, "___syscall54": ___syscall54, "___syscall6": ___syscall6, "___unlock": ___unlock, "_emscripten_memcpy_big": _emscripten_memcpy_big, "_multiply_in_js": _multiply_in_js, "flush_NO_FILESYSTEM": flush_NO_FILESYSTEM, "DYNAMICTOP_PTR": DYNAMICTOP_PTR, "tempDoublePtr": tempDoublePtr, "ABORT": ABORT, "STACKTOP": STACKTOP, "STACK_MAX": STACK_MAX };
 // EMSCRIPTEN_START_ASM
 var asm = (/** @suppress {uselessCode} */ function(global, env, buffer) {
 'almost asm';
@@ -1848,6 +1852,7 @@ var asm = (/** @suppress {uselessCode} */ function(global, env, buffer) {
   var ___syscall6=env.___syscall6;
   var ___unlock=env.___unlock;
   var _emscripten_memcpy_big=env._emscripten_memcpy_big;
+  var _multiply_in_js=env._multiply_in_js;
   var flush_NO_FILESYSTEM=env.flush_NO_FILESYSTEM;
   var tempFloat = 0.0;
 
@@ -1897,18 +1902,15 @@ function getTempRet0() {
 function _multiply($0,$1) {
  $0 = +$0;
  $1 = +$1;
- var $2 = 0.0, $3 = 0.0, $4 = 0.0, $5 = 0, $6 = 0.0, $7 = 0.0, $8 = 0.0, $9 = 0, label = 0, sp = 0;
+ var $2 = 0.0, $3 = 0.0, $4 = 0.0, $5 = 0.0, $6 = 0, label = 0, sp = 0;
  sp = STACKTOP;
  STACKTOP = STACKTOP + 16|0; if ((STACKTOP|0) >= (STACK_MAX|0)) abortStackOverflow(16|0);
  $2 = $0;
  $3 = $1;
  $4 = $2;
- $5 = (~~(($4)));
- $6 = (+($5|0));
- $7 = $3;
- $8 = $6 * $7;
- $9 = (~~(($8)));
- STACKTOP = sp;return ($9|0);
+ $5 = $3;
+ $6 = (_multiply_in_js((+$4),(+$5))|0);
+ STACKTOP = sp;return ($6|0);
 }
 function _malloc($0) {
  $0 = $0|0;
