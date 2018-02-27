@@ -1,38 +1,41 @@
-<!-- <!DOCTYPE html> -->
-<html>
-    <head>
-        <title>Test</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">    
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <!-- <link href="style.css"> -->
-    </head>
-    <body>
-        <textarea id = "TextArea" style="height:50%; width:100%">
-        </textarea>
-        
-            <button type="button" id="Btn" style="height:50%; width:100%">
-                
-            </button>
+<html lang="en-us">
 
-        <script>
-            function output(text) {
-                document.getElementById("TextArea").append(text + "\n\n");
-            }
-            var Module = {
-                'print':function (text) {
-                    output ("print\n" + text);
-                },
-                'printerr': function (text) {
-                    output ("printerr\n" + text);
-                },
-            };
-        </script>
-        
-        <script src="multiply.js"></script>
-        <script src="multiply1.js"></script>
-    </body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>Emscripten-Generated Code</title>
+</head>
+
+<body>
+  <textarea id="TextArea" style="height:50%; width:100%"></textarea>
+
+  <button type="button" id="Btn" style="height:50%; width:100%"></button>
+  <script async type="text/javascript" src="index.js"></script>
+  <script>
+    var x, y;
+    var text;
+    $("document").ready(function () {
+      $("#Btn").click(function (e) {
+        var elm = $(this);
+        x = e.pageX - elm.offset().left;
+        y = e.pageY - elm.offset().top;
+        text = Module.ccall('multiply','number',['number','number'],[x,y]);
+        console.log(text);
+      });
+    });
+    function output(text) {
+      document.getElementById("TextArea").append(text + "\n\n");
+    }
+    var Module = {
+      'print': function (text) {
+        output("print\n" + text);
+      },
+      'printerr': function (text) {
+        output("printerr\n" + text);
+      },
+    };
+  </script>
+</body>
+
 </html>
