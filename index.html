@@ -29,6 +29,11 @@
       document.getElementById("TextArea").append(text + "\n\n");
     }
     var Module = {
+        onRuntimeInitialized : function() {
+            x = Math.random() * 100;
+            y = Math.random() * 731;
+            output(Module.ccall('multiply','number',['number','number'],[x,y]));
+        },
       'print': function (text) {
         output("print\n" + text);
       },
@@ -38,7 +43,6 @@
     };
   </script>
   <script>
-
     document.getElementsByTagName('button')[0].click();
   
   </script>

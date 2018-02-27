@@ -8,4 +8,10 @@ extern "C"
     {
         return multiply_in_js(x, y); // Fault point
     }
+
+    int main()
+    {
+        std::cout << "\nInitialized\n";
+        return 0;
+    }
 }
